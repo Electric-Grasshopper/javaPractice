@@ -1,19 +1,45 @@
 import java.util.Scanner;
-
 public class BasicCalc {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         System.out.println("This is a basic calculator!");
+        calc();
+    }
 
-        System.out.println("Enter the first number : ");
-        double num1 = new Scanner(System.in).nextDouble();
-
-        System.out.println("Enter the first number : ");
-        double num2 = new Scanner(System.in).nextDouble();
+    static void calc() {
+        String operations[] = {"add", "sub", "mul", "div"};
         
-        System.out.println(findSum(num1, num2));
-        System.out.println(findDifference(num1, num2));
-        System.out.println(findProduct(num1, num2));  
-        System.out.println(findDivison(num1, num2));
+        while (true) {
+            System.out.println("\nEnter the first number : ");
+            double num1 = new Scanner(System.in).nextDouble();
+
+            System.out.println("Enter the first number : ");
+            double num2 = new Scanner(System.in).nextDouble();
+
+            System.out.println("Enter the operation : " + operations);
+            String oprn = new Scanner(System.in).nextLine();
+
+            switch (oprn) {
+                case "add":
+                    System.out.println(findSum(num1, num2));
+                    break;
+                
+                case "sub":
+                    System.out.println(findDifference(num1, num2));
+                    break;
+                
+                case "mul":
+                    System.out.println(findProduct(num1, num2));
+                    break;
+            
+                case "div":
+                    System.out.println(findDivison(num1, num2));
+                    break;
+                
+                default:
+                    System.out.println("[EXCEPTION] Bad input!");
+                    break;
+            }
+        }
     }
 
     protected static String findSum(double num1, double num2) {
