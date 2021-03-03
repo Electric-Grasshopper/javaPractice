@@ -1,22 +1,22 @@
 import java.util.Scanner;
 public class BasicCalc {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         System.out.println("This is a basic calculator!");
         calc();
     }
 
     static void calc() {
-        String operations[] = {"add", "sub", "mul", "div"};
+        Scanner sc = new Scanner(System.in);
         
         while (true) {
             System.out.println("\nEnter the first number : ");
-            double num1 = new Scanner(System.in).nextDouble();
+            double num1 = sc.nextDouble();
 
             System.out.println("Enter the first number : ");
-            double num2 = new Scanner(System.in).nextDouble();
+            double num2 = sc.nextDouble();
 
-            System.out.println("Enter the operation : " + operations);
-            String oprn = new Scanner(System.in).nextLine();
+            System.out.println("Enter the operation : add, sub, mul, div");
+            String oprn = sc.nextLine();
 
             switch (oprn) {
                 case "add":
