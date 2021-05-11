@@ -27,7 +27,7 @@
 
 import java.util.Scanner;
 
-class Source 
+class GenerateAllPasswords 
 {
     // int cnt;
     // Recursive helper function, adds/removes characters until len is reached
